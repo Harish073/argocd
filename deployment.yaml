@@ -1,0 +1,20 @@
+#Testing
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    run: result
+  name: result
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      run: result
+  template:
+    metadata:
+      labels:
+        run: result
+    spec:
+      containers:
+        - image: harish073/appresults:latest
+        name: result
